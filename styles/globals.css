@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+button:hover {
+  cursor: pointer;
+}
