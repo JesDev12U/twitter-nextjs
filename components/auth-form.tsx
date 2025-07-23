@@ -30,11 +30,13 @@ export function AuthForm({ mode = 'login' }: AuthFormProps) {
 
     try {
       if (mode === 'signup') {
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
+          (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000')
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
-            emailRedirectTo: `${window.location.origin}/auth/confirm`,
+            emailRedirectTo: `${baseUrl}/auth/confirm`,
             // Estos datos son necesarios debido a que agregamos la autenticación con GitHub y estos metadatos GitHub ya nos los da.
             data: {
               name: email.split('@')[0],
