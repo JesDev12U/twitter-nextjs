@@ -6,10 +6,14 @@ import { GitHubIcon } from "@/components/icons";
 
 const handleSignIn = async () => {
   const supabase = createClient()
+  // Usar variable de entorno en producción, window.location.origin en desarrollo
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
+    (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000')
+  
   await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: `${window.location.origin}/auth/confirm`
+      redirectTo: `${baseUrl}/auth/confirm`
     }
   })
 }
