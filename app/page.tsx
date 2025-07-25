@@ -1,3 +1,5 @@
+
+
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 import TableUI from '../components/tableUI/TableUI';
@@ -58,3 +60,4 @@ export default async function App() {
     </main>
   );
 }
+
