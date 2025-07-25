@@ -17,11 +17,7 @@ export default function ItineraryForm({
   onCancel 
 }: ItineraryFormProps) {
   const [isLoading, setIsLoading] = useState(false);
-<<<<<<< HEAD
   const [formData, setFormData] = useState<Partial<Itinerary>>({
-=======
-  const [formData, setFormData] = useState<ItineraryData>({
->>>>>>> c6d126158ac3d6c4d3d9b8a7063889901393c23d
     title: '',
     destination: '',
     language: '',
@@ -126,11 +122,7 @@ export default function ItineraryForm({
   };
 
   const handleInputChange = (name: string, value: string) => {
-<<<<<<< HEAD
     setFormData((prev: Partial<Itinerary>) => ({
-=======
-    setFormData(prev => ({
->>>>>>> c6d126158ac3d6c4d3d9b8a7063889901393c23d
       ...prev,
       [name]: value
     }));
